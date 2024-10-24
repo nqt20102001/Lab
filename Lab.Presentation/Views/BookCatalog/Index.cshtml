@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Lab.Application.DTOs.BookCatalogDTO>
+
+<h2>Book Catalogs</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Catalog</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Book?.Title</td>
+                <td>@item.Catalog?.Title</td>
+                <td>
+                    <a asp-action="Details" asp-route-bookId="@item.BookId" asp-route-catalogId="@item.CatalogId">Details</a> |
+                    <a asp-action="Delete" asp-route-bookId="@item.BookId" asp-route-catalogId="@item.CatalogId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

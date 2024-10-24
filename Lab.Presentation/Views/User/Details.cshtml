@@ -1,0 +1,38 @@
+﻿@model Lab.Application.DTOs.UserDTO
+
+<h2>User Details</h2>
+
+<div>
+    <h4>@Model.Username</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+
+        <dt class="col-sm-2">Phone</dt>
+        <dd class="col-sm-10">@Model.Phone</dd>
+
+        <dt class="col-sm-2">Address</dt>
+        <dd class="col-sm-10">@Model.Address</dd>
+
+        <dt class="col-sm-2">Carts</dt>
+        <dd class="col-sm-10">
+            @if (Model.Carts != null && Model.Carts.Any())
+            {
+                <ul>
+                    @foreach (var cart in Model.Carts)
+                    {
+                        <li>Cart ID: @cart.Id, Total Price: @cart.TotalPrice, Status: @cart.Status</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No carts available.</p>
+            }
+        </dd>
+    </dl>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Lab.Application.DTOs.CatalogDTO>
+
+<h2>Catalogs</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Is Active</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var catalog in Model)
+        {
+            <tr>
+                <td>@catalog.Title</td>
+                <td>@catalog.Description</td>
+                <td>@catalog.IsActive</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@catalog.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@catalog.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@catalog.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

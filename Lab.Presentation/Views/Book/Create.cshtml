@@ -1,0 +1,23 @@
+﻿@model Lab.Application.DTOs.BookDTO
+
+<h2>Create New Book</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" id="Price" name="Price" required />
+    </div>
+
+    <div class="form-group">
+        <label for="GenreName">Genre</label>
+        <input type="text" class="form-control" id="GenreName" name="GenreName" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
