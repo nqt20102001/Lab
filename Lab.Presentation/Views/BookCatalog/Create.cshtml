@@ -1,18 +1,20 @@
 ﻿@model Lab.Application.DTOs.BookCatalogDTO
 
-<h2>Create New Book Catalog</h2>
+<div class="container mt-5">
+    <h2>Create New Book Catalog</h2>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label for="BookId">Book ID</label>
-        <input asp-for="BookId" class="form-control" required />
-    </div>
+    <form asp-action="Create" method="post" class="mt-4">
+        <div class="mb-3">
+            <label asp-for="BookId" class="form-label">Book ID</label>
+            <input asp-for="BookId" class="form-control" required />
+        </div>
 
-    <div class="form-group">
-        <label for="CatalogId">Catalog ID</label>
-        <input asp-for="CatalogId" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label asp-for="CatalogId" class="form-label">Catalog ID</label>
+            <input asp-for="CatalogId" class="form-control" required />
+        </div>
 
-    <button type="submit" class="btn btn-primary">Create</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+        <button type="submit" class="btn btn-success">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

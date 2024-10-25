@@ -1,30 +1,32 @@
 ﻿@model Lab.Application.DTOs.CartDetailDTO
 
-<h2>Edit Cart Detail</h2>
+<div class="container mt-5">
+    <h2>Edit Cart Detail</h2>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
+    <form asp-action="Edit" method="post" class="mt-4">
+        <input type="hidden" asp-for="Id" />
 
-    <div class="form-group">
-        <label for="CartId">Cart ID</label>
-        <input asp-for="CartId" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label asp-for="CartId" class="form-label">Cart ID</label>
+            <input asp-for="CartId" class="form-control" required />
+        </div>
 
-    <div class="form-group">
-        <label for="BookId">Book ID</label>
-        <input asp-for="BookId" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label asp-for="BookId" class="form-label">Book ID</label>
+            <input asp-for="BookId" class="form-control" required />
+        </div>
 
-    <div class="form-group">
-        <label for="Quantity">Quantity</label>
-        <input asp-for="Quantity" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label">Quantity</label>
+            <input asp-for="Quantity" class="form-control" required />
+        </div>
 
-    <div class="form-group">
-        <label for="Price">Price</label>
-        <input asp-for="Price" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label"> Price</label>
+            <input asp-for="Price" class="form-control" required />
+        </div>
 
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

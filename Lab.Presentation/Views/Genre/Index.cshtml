@@ -1,33 +1,33 @@
 ﻿@model IEnumerable<Lab.Application.DTOs.GenreDTO>
 
-<h2>Genres</h2>
+<div class="container mt-5">
+    <h2 class="mb-4">Genre</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <a class="btn btn-primary mb-3" asp-action="Create">Create New Catalog</a>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Is Active</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var genre in Model)
-        {
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
             <tr>
-                <td>@genre.Name</td>
-                <td>@genre.Description</td>
-                <td>@genre.IsActive</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@genre.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@genre.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@genre.Id">Delete</a>
-                </td>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Is Active</th>
+                <th scope="col" class="text-center">Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var genre in Model)
+            {
+                <tr>
+                    <td>@genre.Name</td>
+                    <td>@genre.Description</td>
+                    <td>@genre.IsActive</td>
+                    <td class="text-center">
+                        <a class="btn btn-sm btn-info text-white" asp-action="Edit" asp-route-id="@genre.Id">Edit</a> |
+                        <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@genre.Id">Details</a> |
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@genre.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
